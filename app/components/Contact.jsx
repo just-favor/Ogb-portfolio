@@ -1,3 +1,5 @@
+import ScrollReveal from "./Scrollreveal";
+
 export default function Contact() {
     const contactItems = [
         { icon: 'fas fa-map-marker-alt', title: 'Location', value: 'Port Harcourt' },
@@ -12,8 +14,9 @@ export default function Contact() {
         { icon: 'fab fa-instagram', href: 'https://www.instagram.com/just__favor/' },
     ];
 
-    return (
-        <section id="contact" className="py-16 bg-[#2d3e50] text-white border-b border-white">
+    return (<div className="" id="contact">
+            <ScrollReveal>
+        <section className="py-16 bg-[#2d3e50] text-white border-b border-white">
             <div className="max-w-[1600px] mx-auto px-10">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-white">Get In Touch</h2>
@@ -43,5 +46,7 @@ export default function Contact() {
                 </div>
             </div>
         </section>
+            </ScrollReveal>
+            </div>
     );
 }

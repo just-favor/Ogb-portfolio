@@ -32,56 +32,66 @@ export default function Hero() {
     };
 
     return (
-        <section id="home" className="hero mt-[70px] overflow-hidden p-0">
-            <div className="w-full h-full pt-[150px] pb-[100px] bg-black/50 relative">
-                <div className="max-w-[1600px] mx-auto px-10 flex items-center justify-between max-md:flex-col max-md:text-center">
+        <section id="home" className="hero mt-[70px] overflow-hidden p-0 h-[80vh]">
+            <div className="w-full h-[60vh] bg-black/70 relative flex items-center">
+                <div className="max-w-[1600px] w-full mx-auto px-10 flex items-center justify-between max-md:flex-col max-md:text-center max-md:justify-center max-md:gap-6">
 
                     <motion.div
                         variants={container}
                         initial="hidden"
                         animate="show"
-                        className="flex-1 pr-12 max-md:pr-0 max-md:mb-12"
+                        className="max-w-[55%] max-lg:max-w-[60%] max-md:max-w-full max-md:px-4"
                     >
-                        {/* H1 without typing */}
                         <motion.h1
                             variants={item}
-                            className="text-6xl max-lg:text-5xl max-md:text-4xl font-bold leading-tight mb-5 text-gray-100"
+                            className="text-6xl max-lg:text-5xl max-md:text-3xl max-sm:text-2xl font-bold leading-tight mb-5 text-gray-100"
                         >
                             Hi, I&apos;m{" "}
-                            <span className="text-cyan-400">
+                            <span className="text-transparent bg-clip-text bg-linear-to-br from-cyan-500 via-cyan-500 to-indigo-500">
                                 {fullText}
                             </span>
                         </motion.h1>
 
                         <motion.h2
                             variants={item}
-                            className="text-3xl max-lg:text-2xl font-semibold mb-5 text-cyan-400"
+                            className="text-3xl max-lg:text-2xl max-md:text-xl font-semibold mb-5 text-transparent bg-clip-text bg-linear-to-br from-cyan-500 to-indigo-500"
                         >
                             Web Developer & Designer
                         </motion.h2>
 
                         <motion.p
                             variants={item}
-                            className="text-lg mb-8 text-white"
+                            className="text-lg max-md:text-base mb-8 text-white"
                         >
-                            A Frontend Developer (React / Next.js) specializing in modern UI, animations, and user-focused design
+                            A Frontend Developer (React / Next.js) specializing in modern UI, animations, and user-focused designs.
                         </motion.p>
 
                         <motion.div
                             variants={item}
-                            className="flex gap-4 max-md:justify-center"
+                            className="flex gap-4 max-md:justify-center flex-wrap"
                         >
-                            <a href="#projects" className="inline-block px-8 py-2 rounded-full font-medium bg-cyan-400 text-black hover:-translate-y-1 transition-all duration-300">
+                            <a href="#projects" className="text-white font-semibold flex justify-center items-center px-8 py-2 rounded-full bg-linear-to-br from-cyan-500 to-indigo-600 hover:-translate-y-1 transition-all duration-300">
                                 View My Work
                             </a>
 
-                            <a href="#contact" className="inline-block px-8 py-2 rounded-full font-medium text-white border-2 border-white hover:-translate-y-1 transition-all duration-300">
+                            <a href="#contact" className="inline-block px-8 py-2 rounded-full bg-white/10 font-medium text-white border-2 border-white hover:-translate-y-1 transition-all duration-300">
                                 Contact Me
                             </a>
                         </motion.div>
                     </motion.div>
 
-                    <div className="flex-1 text-center"></div>
+                    <motion.div
+                        initial={{ x: 200, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="max-md:hidden absolute right-0 bottom-0"
+                    >
+                        <img
+                            src="/img/bg-re.png"
+                            alt="Favour"
+                            className="w-[380px] max-lg:w-[280px] object-contain"
+                        />
+                    </motion.div>
                 </div>
             </div>
         </section>

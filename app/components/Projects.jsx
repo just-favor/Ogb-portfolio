@@ -1,6 +1,6 @@
-"use client"; // Add this if using client-side interactivity like framer-motion
+"use client";
+import ScrollReveal from "./Scrollreveal";
 
-import { motion } from "framer-motion";
 
 const projects = [
     { img: '/img/unc-comm.png', title: 'Commerce Website', desc: 'A Commerce site built with react that checks out using Whatsapp', tags: ['Tailwind', 'React'], link: 'https://uncle-chuks-site-pms2.vercel.app/' },
@@ -11,6 +11,7 @@ const projects = [
 export default function Projects() {
     return (
         <section id="projects" className="py-16 bg-white dark:bg-[#1a1a1a]">
+            <ScrollReveal>
             <div className="max-w-[1600px] mx-auto px-10">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-[#2d3e50] dark:text-gray-200">
@@ -19,12 +20,8 @@ export default function Projects() {
                 </div>
                 <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] max-md:grid-cols-[repeat(auto-fill,minmax(300px,1fr))] max-sm:grid-cols-1 gap-16 auto-rows-fr">
                     {projects.map((project, index) => (
-                        <motion.div
+                        <div
                             key={project.title}
-                            initial={{ opacity: 0, y: 50 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.6, delay: index * 0.2 }}
                             className="rounded-xl overflow-hidden shadow-md hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 flex flex-col h-100 dark:bg-[#0a0a0a]"
                         >
                             <div className="relative overflow-hidden group">
@@ -62,10 +59,11 @@ export default function Projects() {
                                     ))}
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>
+            </ScrollReveal>
         </section>
     );
 }

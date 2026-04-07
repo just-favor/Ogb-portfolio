@@ -9,10 +9,12 @@ export default function Header() {
     useEffect(() => {
         const handleScroll = () => {
             setSticky(window.scrollY > 50);
-            document.querySelectorAll('section').forEach(section => {
+            ['home', 'about', 'skills', 'projects', 'contact'].forEach(id => {
+                const section = document.querySelector(`#${id}`);
+                if (!section) return;
                 const top = section.offsetTop - 100;
                 if (window.scrollY >= top && window.scrollY < top + section.offsetHeight) {
-                    setActiveSection(section.getAttribute('id'));
+                    setActiveSection(id);
                 }
             });
         };

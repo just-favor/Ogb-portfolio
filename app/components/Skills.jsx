@@ -1,3 +1,5 @@
+import ScrollReveal from "./Scrollreveal";
+
 const technicalSkills = [
     // { icon: 'fab fa-html5', name: 'HTML5' },
     // { icon: 'fab fa-css3-alt', name: 'CSS3' },
@@ -34,7 +36,9 @@ function SkillCard({ skill }) {
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-40 bg-gray-50 dark:bg-black">
+        <div className="" id="skills">
+        <ScrollReveal>
+        <section  className="py-40 bg-gray-50 dark:bg-black">
             <div className="max-w-[1600px] mx-auto px-10">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-[#2d3e50] dark:text-gray-200">My Technical Skills</h2>
@@ -54,5 +58,7 @@ export default function Skills() {
                 </div> */}
             </div>
         </section>
+        </ScrollReveal>
+        </div>
     );
 }
