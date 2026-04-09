@@ -4,8 +4,9 @@ import ScrollReveal from "./Scrollreveal";
 
 const projects = [
     { img: '/img/unc-comm.png', title: 'Commerce Website', desc: 'A Commerce site built with react that checks out using Whatsapp', tags: ['Tailwind', 'React'], link: 'https://uncle-chuks-site-pms2.vercel.app/' },
-    { img: '/img/Screenshot 2026-01-23 at 7.21.33 PM.png', title: 'Sehembztravels', desc: 'Travel booking platform with seamless ticket reservations and planning.', tags: ['Next.js', 'Tailwind', 'React'], link: 'https://sehembztravels.com/' },
-    { img: '/img/landingpage.png', title: 'Salient', desc: 'A Responsive Landing page with smooth and seamless scroll animation feel.', tags: ['Next.js', 'Tailwind', 'React'], link: 'https://landingpage-umber-mu.vercel.app' },
+    { img: '/img/Screenshot 2026-01-23 at 7.21.33 PM.png', title: 'Sehembztravels', desc: 'Travel booking platform with seamless ticket reservations and planning.', tags: ['Next.js', 'Tailwind'], link: 'https://sehembztravels.com/' },
+    { img: '/img/landingpage.png', title: 'Salient', desc: 'A Responsive Landing page with smooth and seamless scroll animation feel.', tags: ['Next.js', 'Tailwind'], link: 'https://landingpage-umber-mu.vercel.app' },
+    { img: '/img/jirovasite.png', title: 'Jirova', desc: 'High-performance web & mobile solutions. Real-time backends • Pixel-perfect apps • AI that actually works for you From MVP to millions of users', tags: ['Next.js', 'Tailwind'], link: 'https://jirova.onrender.com' },
 ];
 
 export default function Projects() {
