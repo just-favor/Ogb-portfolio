@@ -32,9 +32,16 @@ export default function Hero() {
     };
 
     return (
-        <section id="home" className="hero mt-[70px] overflow-hidden p-0 h-[80vh]">
-            <div className="w-full h-[60vh] bg-black/70 relative flex items-center">
-                <div className="max-w-[1600px] w-full mx-auto px-10 flex items-center justify-between max-md:flex-col max-md:text-center max-md:justify-center max-md:gap-6">
+        <section id="home" className="hero mt-[70px] overflow-hidden p-0 relative" style={{height: 'calc(100vh - 70px)'}}>
+
+            {/* Mobile: image as full background */}
+            <div className="md:hidden absolute inset-0 z-0">
+                <img src="/img/bg-re.png" alt="Favour" className="w-full h-full object-cover object-[center_20%]" />
+                <div className="absolute inset-0 bg-black/65" />
+            </div>
+
+            <div className="w-full h-full md:h-[60vh] md:bg-black/70 relative flex items-center z-10">
+                <div className="max-w-[1600px] w-full mx-auto px-10 flex items-center justify-between max-md:flex-col max-md:text-center max-md:justify-center max-md:items-center max-md:h-full">
 
                     <motion.div
                         variants={container}

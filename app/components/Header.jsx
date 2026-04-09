@@ -47,22 +47,39 @@ export default function Header() {
                     <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
                 </div>
 
-                {/* Nav */}
-                <nav className={`
-                    md:flex md:items-center ml-auto
-                    fixed md:static top-[70px] left-0 w-full md:w-auto h-[calc(100vh-70px)] md:h-auto
-                    bg-white md:bg-transparent
-                    flex-col md:flex-row items-center justify-start md:justify-center pt-12 md:pt-0
-                    transition-all duration-300 shadow-md md:shadow-none overflow-y-auto
-                    ${menuOpen ? 'left-0 flex' : 'left-[-100%] hidden md:flex'}
-                `}>
-                    <ul className="flex flex-col md:flex-row w-full md:w-auto">
+                {/* Desktop Nav */}
+                <nav className="hidden md:flex md:items-center ml-auto">
+                    <ul className="flex flex-row">
                         {navItems.map(item => (
-                            <li key={item} className="md:ml-8 w-full md:w-auto text-center">
+                            <li key={item} className="ml-8">
                                 <a
                                     href={`#${item}`}
                                     onClick={(e) => handleNavClick(e, item)}
-                                    className={`nav-link relative block py-4 md:py-2 text-lg md:text-base font-medium transition-colors duration-300 hover:text-[#4a6cf7] ${activeSection === item ? 'active text-[#4a6cf7]' : sticky ? 'text-white' : 'text-[#333]'}`}
+                                    className={`nav-link relative block py-2 text-base font-medium transition-colors duration-300 hover:text-[#4a6cf7] ${activeSection === item ? 'active text-[#4a6cf7]' : sticky ? 'text-white' : 'text-[#333]'}`}
+                                >
+                                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+
+                {/* Mobile Sidebar */}
+                <div
+                    className={`md:hidden fixed inset-0 bg-black/50 z-[999] transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+                    onClick={() => setMenuOpen(false)}
+                />
+                <nav
+                    className={`md:hidden fixed top-0 right-0 h-full w-[70%] max-w-[300px] z-[1000] flex flex-col pt-20 px-6 transition-transform duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                    style={{ backdropFilter: 'blur(24px)', backgroundColor: 'rgba(8,8,20,0.80)', borderLeft: '1px solid rgba(255,255,255,0.08)' }}
+                >
+                    <ul className="flex flex-col w-full">
+                        {navItems.map(item => (
+                            <li key={item} className="w-full border-b border-white/10">
+                                <a
+                                    href={`#${item}`}
+                                    onClick={(e) => handleNavClick(e, item)}
+                                    className={`block py-4 text-lg font-medium transition-colors duration-300 hover:text-cyan-400 ${activeSection === item ? 'text-cyan-400' : 'text-white/80'}`}
                                 >
                                     {item.charAt(0).toUpperCase() + item.slice(1)}
                                 </a>
