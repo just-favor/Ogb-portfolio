@@ -10,13 +10,6 @@ const technicalSkills = [
     { icon: 'fas fa-project-diagram', name: 'GraphQL' },
 ];
 
-// const softSkills = [
-//     { icon: 'fas fa-users', name: 'Team Collaboration' },
-//     { icon: 'fas fa-tasks', name: 'Project Management' },
-//     { icon: 'fas fa-comments', name: 'Communication' },
-//     { icon: 'fas fa-lightbulb', name: 'Problem Solving' },
-// ];
-
 function SkillCard({ skill }) {
     return (
         <div className="bg-white dark:bg-[#0a0a0a] rounded-xl p-8 text-center shadow-md hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
@@ -50,12 +43,6 @@ export default function Skills() {
                         {technicalSkills.map(skill => <SkillCard key={skill.name} skill={skill} />)}
                     </div>
                 </div>
-                {/* <div>
-                    <h3 className="text-3xl font-semibold mb-8 text-[#2d3e50] dark:text-gray-200 text-center">Soft Skills</h3>
-                    <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-12">
-                        {softSkills.map(skill => <SkillCard key={skill.name} skill={skill} />)}
-                    </div>
-                </div> */}
             </div>
         </section>
         </ScrollReveal>

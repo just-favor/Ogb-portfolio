@@ -36,6 +36,7 @@ export default function Header() {
     const navItems = ['home', 'about', 'skills', 'projects', 'contact'];
 
     return (
+        <>
         <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 shadow-md ${sticky ? 'py-2 backdrop-blur-md bg-black/40 shadow-black/20' : 'py-4 bg-white shadow-black/10'}`}>
             <div className="max-w-[1600px] mx-auto px-10 flex items-center relative">
                 <div className="logo">
@@ -43,7 +44,7 @@ export default function Header() {
                 </div>
 
                 {/* Hamburger */}
-                <div className={`md:hidden text-2xl cursor-pointer z-[1001] ml-auto transition-colors duration-300 ${sticky ? 'text-white' : 'text-[#2d3e50]'}`} onClick={() => setMenuOpen(!menuOpen)}>
+                <div className={`md:hidden text-2xl cursor-pointer ml-auto transition-colors duration-300 ${sticky ? 'text-white' : 'text-[#2d3e50]'}`} onClick={() => setMenuOpen(!menuOpen)}>
                     <i className={`fas ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
                 </div>
 
@@ -63,31 +64,32 @@ export default function Header() {
                         ))}
                     </ul>
                 </nav>
-
-                {/* Mobile Sidebar */}
-                <div
-                    className={`md:hidden fixed inset-0 bg-black/50 z-[999] transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
-                    onClick={() => setMenuOpen(false)}
-                />
-                <nav
-                    className={`md:hidden fixed top-0 right-0 h-full w-[70%] max-w-[300px] z-[1000] flex flex-col pt-20 px-6 transition-transform duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-                    style={{ backdropFilter: 'blur(24px)', backgroundColor: 'rgba(8,8,20,0.80)', borderLeft: '1px solid rgba(255,255,255,0.08)' }}
-                >
-                    <ul className="flex flex-col w-full">
-                        {navItems.map(item => (
-                            <li key={item} className="w-full border-b border-white/10">
-                                <a
-                                    href={`#${item}`}
-                                    onClick={(e) => handleNavClick(e, item)}
-                                    className={`block py-4 text-lg font-medium transition-colors duration-300 hover:text-cyan-400 ${activeSection === item ? 'text-cyan-400' : 'text-white/80'}`}
-                                >
-                                    {item.charAt(0).toUpperCase() + item.slice(1)}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
             </div>
         </header>
+
+        {/* Mobile Sidebar — outside header to avoid z-index stacking context */}
+        <div
+            className={`md:hidden fixed inset-0 bg-black/50 z-[9998] transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            onClick={() => setMenuOpen(false)}
+        />
+        <nav
+            className={`md:hidden fixed top-0 right-0 h-full w-[70%] max-w-[300px] z-[9999] flex flex-col pt-20 px-6 transition-transform duration-500 ease-in-out ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+            style={{ backdropFilter: 'blur(24px)', backgroundColor: 'rgba(8,8,20,0.80)', borderLeft: '1px solid rgba(255,255,255,0.08)' }}
+        >
+            <ul className="flex flex-col w-full">
+                {navItems.map(item => (
+                    <li key={item} className="w-full border-b border-white/10">
+                        <a
+                            href={`#${item}`}
+                            onClick={(e) => handleNavClick(e, item)}
+                            className={`block py-4 text-lg font-medium transition-colors duration-300 hover:text-cyan-400 ${activeSection === item ? 'text-cyan-400' : 'text-white/80'}`}
+                        >
+                            {item.charAt(0).toUpperCase() + item.slice(1)}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+        </>
     );
 }
