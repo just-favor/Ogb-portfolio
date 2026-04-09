@@ -2,21 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Direction = "up" | "down" | "left" | "right";
-
-interface ScrollRevealProps {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-  duration?: number;
-  direction?: Direction;
-  scaleFrom?: number;
-  distance?: number;
-  threshold?: number;
-  repeat?: boolean;
-}
-
-const directionOffset: Record<Direction, string> = {
+const directionOffset = {
   up: "translateY({d}px)",
   down: "translateY(-{d}px)",
   left: "translateX({d}px)",
@@ -33,8 +19,8 @@ export default function ScrollReveal({
   distance = 32,
   threshold = 0.15,
   repeat = false,
-}: ScrollRevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+}) {
+  const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
