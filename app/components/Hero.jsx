@@ -32,7 +32,7 @@ export default function Hero() {
     };
 
     return (
-        <section id="home" className="hero mt-[70px] overflow-hidden p-0 relative" style={{height: 'calc(100vh - 70px)'}}>
+        <section id="home" className="hero mt-[70px] overflow-hidden p-0 relative" style={{height: 'calc(80vh - 70px)'}}>
 
             {/* Mobile: image as full background */}
             <div className="md:hidden absolute inset-0 z-0">

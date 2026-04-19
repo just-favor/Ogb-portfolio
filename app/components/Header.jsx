@@ -37,7 +37,7 @@ export default function Header() {
 
     return (
         <>
-        <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 shadow-md ${sticky ? 'py-2 backdrop-blur-md bg-black/40 shadow-black/20' : 'py-4 bg-white shadow-black/10'}`}>
+        <header className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 shadow-md ${sticky ? 'py-2 backdrop-blur-md bg-black/60 shadow-black/20' : 'py-4 bg-white shadow-black/10'}`}>
             <div className="max-w-[1600px] mx-auto px-10 flex items-center relative">
                 <div className="logo">
                     <h1 className={`text-3xl font-bold transition-colors duration-300 ${sticky ? 'text-white' : 'text-[#2d3e50]'}`}>Portfolio</h1>
