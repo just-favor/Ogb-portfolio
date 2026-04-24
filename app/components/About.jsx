@@ -125,7 +125,7 @@ export default function About() {
                         >
                             {[
                                 { title: 'Name:', value: 'Ogbewe Favour' },
-                                { title: 'Email:', value: 'vivasfavor@gmail.com' },
+                                { title: 'Email:', value: 'favourogbewe@yahoo.com' },
                                 { title: 'Location:', value: 'Port Harcourt, Nigeria' },
                                 { title: 'Availability:', value: 'Available for Freelance' },
                             ].map((info) => (

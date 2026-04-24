@@ -12,7 +12,7 @@ export default function Contact() {
                     <p className="mt-5 text-lg font-medium">I'm always open to new opportunities and collaborations. Feel free to reach out via email or connect on social media.</p>
 
                     <button>
-            <a href="mailto:vivasfavor@gmail.com" className="flex items-center mt-10 px-5 py-2 bg-white text-black rounded-lg hover:bg-white/90 transition duration-300">
+            <a href="mailto:favourogbewe@yahoo.com" className="flex items-center mt-10 px-5 py-2 bg-white text-black rounded-lg hover:bg-white/90 transition duration-300">
               <HiMail className="mr-2 h-5 w-5" /> Email Me
             </a>
           </button>

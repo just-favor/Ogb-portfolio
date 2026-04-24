@@ -33,7 +33,7 @@ export default function Header() {
         if (target) window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
     };
 
-    const navItems = ['home', 'about', 'skills', 'projects', 'contact'];
+    const navItems = ['home', 'about', 'projects', 'contact'];
 
     return (
         <>
@@ -56,7 +56,7 @@ export default function Header() {
                                 <a
                                     href={`#${item}`}
                                     onClick={(e) => handleNavClick(e, item)}
-                                    className={`nav-link relative block py-2 text-base font-medium transition-colors duration-300 hover:text-[#4a6cf7] ${activeSection === item ? 'active text-[#4a6cf7]' : sticky ? 'text-white' : 'text-[#333]'}`}
+                                    className={`nav-link relative block py-2 text-lg font-medium transition-colors duration-300 hover:text-[#4a6cf7] ${activeSection === item ? 'active text-[#4a6cf7]' : sticky ? 'text-white' : 'text-[#333]'}`}
                                 >
                                     {item.charAt(0).toUpperCase() + item.slice(1)}
                                 </a>
