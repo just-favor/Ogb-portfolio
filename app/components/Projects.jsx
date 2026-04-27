@@ -8,6 +8,7 @@ const projects = [
     { img: '/img/landingpage.png', title: 'Salient', desc: 'A Responsive Landing page with smooth and seamless scroll animation feel.', tags: ['Next.js', 'Tailwind', 'Typescript'], link: 'https://landingpage-umber-mu.vercel.app' },
     { img: '/img/jirovasite.png', title: 'Jirova', desc: 'High-performance web & mobile solutions. Real-time backends • Pixel-perfect apps • AI that actually works for you From MVP to millions of users', tags: ['Next.js', 'Tailwind', 'Typescript'], link: 'https://jirova.onrender.com' },
     { img: '/img/foodparley.jpg', title: 'FoodParley', desc: 'FoodParley is a modern food ordering platform where users can browse a menu, add items to their cart, and place delivery orders.', tags: ['Next.js', 'Typescript', 'NextAuth.js', 'Supabase'], link: 'https://foodparley.vercel.app' },
+    { img: '/img/swiftcodersh.png', title: 'SwiftCoders', desc: 'A frontend development studio focused on building fast, modern, and scalable websites that help businesses grow.', tags: ['Next.js', 'Typescript','Framer-motion'], link: 'https://swiftcoders.vercel.app' },
 ];
 
 export default function Projects() {
